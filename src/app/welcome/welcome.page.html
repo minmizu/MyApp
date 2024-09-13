@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class class="ion-text-center">Header</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Header</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Blank</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+
+    <!-- Menu Desplegable -->
+    <ion-fab slot="fixed" vertical="bottom" horizontal="start" id="DespMenu">
+      <ion-fab-button>
+        <ion-icon name="chevron-up-circle"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button>
+          <ion-icon name="settings"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="car"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button>
+          <ion-icon name="Heart"></ion-icon>
+        </ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+    <!-- Menu Desplegable -->
+
+    <!-- Search-Bar -->
+    <ion-searchbar id="HomeSearch"  show-clear-button="always" clear-icon="trash-bin" placeholder="Ingrese direccion de su sede"></ion-searchbar>
+    <!-- Search-Bar -->
+
+    <!-- Escaner QR -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button id="QrButton" (click)="scanQRCode()">
+        <ion-icon ios="qr-code-outline" md="qr-code-sharp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <!-- Escaner QR -->
+    <div id="containerRando">
+      <ion-img
+      src="assets\imagenes\rando.jpg"
+    ></ion-img>
+    </div>
+  </ion-content>
+
+</ion-content>
