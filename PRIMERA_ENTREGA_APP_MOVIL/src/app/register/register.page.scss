@@ -1,0 +1,42 @@
+#registerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;/* 
+  background-color: #f9f9f9; */
+  min-height: 100vh;
+}
+
+#registerLogo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+ion-item {
+  --highlight-color: #004d40;
+}
+
+#nameItem,
+#emailItem,
+#passwordItem,
+#confirmPasswordItem {
+  margin-bottom: 15px;
+}
+
+#nameError,
+#emailError,
+#passwordError,
+#confirmPasswordError {
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+#registerButton {
+  margin-top: 20px;
+}
+
+#loginButton {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}

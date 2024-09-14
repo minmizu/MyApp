@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title class="ion-text-center">Te Llevo Duoc</ion-title>
+      <ion-title class="ion-text-center">Iniciar Sesión</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="login-container">
+    <ion-img id="duocLogo" src="assets/imagenes/Logo_DuocUC.svg.png" width="150px"></ion-img>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+      <ion-item id="emailItem">
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input id="emailInput" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <div id="emailErrors" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-messages">
+        <ion-text color="danger" *ngIf="loginForm.get('email')?.errors?.['email']">El correo es inválido</ion-text>
+        <ion-text color="danger" *ngIf="loginForm.get('email')?.errors?.['invalidDomain']">
+          El correo debe ser institucional
+        </ion-text>
+      </div>
+
+      <ion-item id="passwordItem">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input id="passwordInput" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <div id="passwordErrors" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-messages">
+        <ion-text color="danger" *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria</ion-text>
+        <ion-text color="danger" *ngIf="loginForm.get('password')?.errors?.['minlength']">La contraseña debe tener al menos 8 caracteres</ion-text>
+      </div>
+
+      <ion-item id="termsItem">
+        <ion-checkbox id="termsCheckbox" formControlName="terms"></ion-checkbox>
+        <ion-label>Aceptar los <a href="#" (click)="$event.stopPropagation()">términos y condiciones</a></ion-label>
+      </ion-item>
+
+      <!-- Botón de Enviar -->
+      <ion-button id="submitButton" expand="full" shape="round" [disabled]="loginForm.invalid" (click)="onSubmit()">Iniciar Sesión</ion-button>
+      <ion-button id="registerButton" expand="full" fill="clear" (click)="goToRegister()">Crear cuenta</ion-button>
+    </form>
+  </div>
+</ion-content>
+
+
+
+
+
