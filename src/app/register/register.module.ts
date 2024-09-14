@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterPage } from './register.page';
+import { CargaPaginaComponent } from '../carga-pagina/carga-pagina.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [RegisterPage]
+  declarations: [RegisterPage,CargaPaginaComponent]
 })
 export class RegisterPageModule {}

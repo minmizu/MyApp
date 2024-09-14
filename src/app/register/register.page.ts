@@ -37,9 +37,11 @@ export class RegisterPage implements OnInit {
     if (this.registerForm.valid) {
       const { name, email, password } = this.registerForm.value;
       console.log(`Usuario registrado: ${name}, ${email}`);
-      this.navCtrl.navigateForward('/bienvenido');
+      // Redirige primero a la página de carga
+      this.navCtrl.navigateForward('/carga-pagina');
     }
   }
+  
 
   goToLogin() {
     this.navCtrl.navigateForward('/login');

@@ -29,11 +29,11 @@ export class HomePage implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-
+  
       // Verifica las credenciales del usuario
       if (this.authenticateUser(email, password)) {
-        // Redirige a la página de bienvenida si las credenciales son correctas
-        this.navCtrl.navigateForward('/welcome');
+        // Redirige primero a la página de carga
+        this.navCtrl.navigateForward('/carga-pagina');
       } else {
         // Muestra un mensaje de error si las credenciales son incorrectas
         alert('Credenciales incorrectas. Inténtalo de nuevo.');

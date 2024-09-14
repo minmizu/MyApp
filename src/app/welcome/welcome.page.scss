@@ -52,13 +52,9 @@ ion-menu::part(container) {
 }
 
 #containerRando{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 25%;
 }

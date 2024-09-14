@@ -18,7 +18,11 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then(m => m.RegisterPageModule)
   },
   
-  { path: 'welcome', component: WelcomePage }, // Añade esta ruta para la página de bienvenida
+  { path: 'welcome', component: WelcomePage }, // ruta página de bienvenida
+
+  { path: 'carga-pagina', component: CargaPaginaComponent},  
+
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 
 ];
 
