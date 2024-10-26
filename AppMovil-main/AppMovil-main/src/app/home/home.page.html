@@ -1,0 +1,80 @@
+<ion-content [fullscreen]="true">  
+
+  <div id="loginDiv">
+    <ion-card id="loginCard">
+      <ion-card-header id="iHeader">
+        <ion-card-title>Inicio de Sesión</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="login">
+          <ion-img id="duocLogo" src="./assets/imagenes/Logo_DuocUC.svg.png"></ion-img>
+        </div>
+
+        <ion-list>
+          <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+            <!-- Input de Correo -->
+            <div id="emailCont"> 
+              <ion-item>
+                <ion-input id="emailInput" type="email" formControlName="email" placeholder="Correo"></ion-input>
+              </ion-item>
+            </div>
+            <!-- Validaciones del correo -->
+            <div id="emailErrors" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-messages">
+              <ion-text color="danger" *ngIf="loginForm.get('email')?.errors?.['email']">El correo es inválido</ion-text>
+              <ion-text color="danger" *ngIf="loginForm.get('email')?.errors?.['invalidDomain']">
+                El correo debe ser institucional
+              </ion-text>
+            </div>
+
+            <!-- Input de Contraseña -->
+            <div id="passCont">
+              <ion-item>
+                <ion-input id="passwordInput" type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+                <!-- Botón de Recuperar Contraseña -->
+              </ion-item>
+            </div>
+            <!-- Validaciones de la contraseña -->
+            <div id="passwordErrors" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-messages">
+              <ion-text color="danger" *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria</ion-text>
+              <ion-text color="danger" *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                La contraseña debe tener al menos 8 caracteres
+              </ion-text>
+            </div>
+
+
+            <!-- Checkbox de términos y condiciones -->
+            <div id="checkCont">
+                <ion-checkbox id="termsCheckbox" formControlName="terms">Aceptar los 
+                  <a href="#" (click)="$event.stopPropagation()">términos y condiciones</a></ion-checkbox>
+            </div>  
+            <!-- Validación del checkbox -->
+            <div id="termsErrors" *ngIf="loginForm.get('terms')?.invalid && loginForm.get('terms')?.touched" class="error-messages">
+              <ion-text color="danger">Debes aceptar los términos y condiciones</ion-text>
+            </div>
+
+            
+            <div id="logButton">
+              <!-- Botón de Iniciar Sesión -->
+              <ion-button id="submitButton" fill="outline" [disabled]="loginForm.invalid" (click)="onSubmit()">Iniciar Sesión</ion-button>
+              <!-- Botón de Crear cuenta -->
+              <ion-button id="registerButton" fill="outline" (click)="goToRegister()">Crear cuenta</ion-button>
+            </div>  
+          </form>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div> 
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>Página de Error</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <div id="container" class="error-container">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>Error en el sistema</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-title>¡Ups! Ha ocurrido un problema.</ion-title>
+          <p>Por favor, verifique su conexión o intente más tarde.</p>
+          <p>Si desea volver <br> presione <a [routerLink]="['/home']">aquí</a></p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </ion-content>
+  

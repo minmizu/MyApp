@@ -1,0 +1,55 @@
+/* Fondo con gradiente para el ion-content */
+ion-content {
+  --background: linear-gradient(to top, #00416a, #e4e5e6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+.ion-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Contenedor del formulario de registro */
+#registerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px; 
+  box-sizing: border-box;
+}
+
+/* Logo del registro */
+#registerLogo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para los ion-item */
+ion-item {
+  width: 100%; 
+  margin-bottom: 10px;
+  border-radius: 10px;  
+}
+
+#coinciden {
+  display: flex;
+  justify-content: center;  /* Centrado horizontal */
+  align-items: center;      /* Centrado vertical */
+  margin-top: 10px;         /* Margen opcional */
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* Fuente: "de los deseos" */
+}
+
+
+/* Estilo para el botón de registro */
+#registerButton {
+  margin-top: 30px;
+  width: 100%; 
+}
